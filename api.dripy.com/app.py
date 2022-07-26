@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask,request
 import pickle
 import numpy as np
 from numpy.linalg import norm
@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import GlobalMaxPooling2D
 from tensorflow.keras.applications.resnet50 import ResNet50,preprocess_input
 from sklearn.neighbors import NearestNeighbors
-
+import pandas as pd
 
 
 model = ResNet50(weights='imagenet',include_top=False,input_shape=(224,224,3))
@@ -35,17 +35,43 @@ neighbors = NearestNeighbors(n_neighbors=6,algorithm='brute',metric='euclidean')
 neighbors.fit(feature_list)
 
 app = Flask(__name__)
-@app.route('/')
+@app.route('/recommend',methods=['GET'])
 def index():
-    result = extract_features('4704.jpg',model)
+    args = request.args
+    path = args['name']
+    path = str(path)
+    path = path + '.jpg'
+    result = extract_features('http://assets.myntassets.com/v1/images/style/properties/2e25195b2eaba31b89a991f2e0dbd532_images.jpg',model)
     distances,indices = neighbors.kneighbors([result])
     final_Arr = []
     for i in indices[0]:
         final_Arr.append(int(str(filenames[i].split('/')[-1].split('.')[0])))
        
     print(final_Arr)
-    return "Hello World"
+    return path
 
+
+@app.route('/search')
+def search():
+    df = pd.read_csv('grandfinaleX.csv',error_bad_lines = False)
+
+    lis = ['gender','masterCategory','subCategory','articleType','productDisplayName']
+
+    query = "shirts for men"
+    x_df = pd.DataFrame()
+
+    for i in query.split():
+        for j in lis:
+            new_df = df[df[j] == i]
+            x_df = pd.concat([x_df,new_df])
+
+    arr = df['id'].head(10).values
+    return {'searchResult': arr.tolist()}
+
+
+@app.route('/image_search')
+def imagesearch():
+    return "HEllo"
 
 if __name__ == '__main__':
     app.run(debug=True)
