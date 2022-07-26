@@ -2,7 +2,8 @@ from flask import Flask,request
 import pickle
 import numpy as np
 from numpy.linalg import norm
-
+import urllib.request
+import os
 import tensorflow 
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import GlobalMaxPooling2D
@@ -39,16 +40,16 @@ app = Flask(__name__)
 def index():
     args = request.args
     path = args['name']
-    path = str(path)
-    path = path + '.jpg'
-    result = extract_features('http://assets.myntassets.com/v1/images/style/properties/2e25195b2eaba31b89a991f2e0dbd532_images.jpg',model)
+    id = args['id']
+    urllib.request.urlretrieve(path, "./uploads/"+str(id)+'.jpg')
+    result = extract_features("./uploads/"+str(id)+'.jpg',model)
     distances,indices = neighbors.kneighbors([result])
     final_Arr = []
     for i in indices[0]:
         final_Arr.append(int(str(filenames[i].split('/')[-1].split('.')[0])))
        
-    print(final_Arr)
-    return path
+    os.remove("./uploads/"+str(id)+'.jpg')
+    return {'result': final_Arr}
 
 
 @app.route('/search')
