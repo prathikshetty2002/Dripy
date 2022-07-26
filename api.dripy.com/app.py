@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,jsonify
 import pickle
 import numpy as np
 from numpy.linalg import norm
@@ -10,6 +10,7 @@ from tensorflow.keras.layers import GlobalMaxPooling2D
 from tensorflow.keras.applications.resnet50 import ResNet50,preprocess_input
 from sklearn.neighbors import NearestNeighbors
 import pandas as pd
+
 
 
 model = ResNet50(weights='imagenet',include_top=False,input_shape=(224,224,3))
@@ -49,16 +50,34 @@ def index():
         final_Arr.append(int(str(filenames[i].split('/')[-1].split('.')[0])))
        
     os.remove("./uploads/"+str(id)+'.jpg')
-    return {'result': final_Arr}
+    return jsonify({'result': final_Arr})
+
+
+@app.route('/image_search')
+def imagesearch():
+    args = request.args
+    url = args['url']
+    urllib.request.urlretrieve(url, "./uploads/" + "test.jpg")
+    result = extract_features("./uploads/"+'test.jpg',model)
+    distances,indices = neighbors.kneighbors([result])
+    final_Arr = []
+    for i in indices[0]:
+        final_Arr.append(int(str(filenames[i].split('/')[-1].split('.')[0])))
+       
+    os.remove("./uploads/"+'test.jpg')
+
+
+    return jsonify({'result': final_Arr})
 
 
 @app.route('/search')
 def search():
-    df = pd.read_csv('grandfinaleX.csv',error_bad_lines = False)
+    args = request.args
+    query = args['query']
+    df = pd.read_csv('./grandfinaleX.csv',error_bad_lines = False)
 
     lis = ['gender','masterCategory','subCategory','articleType','productDisplayName']
 
-    query = "shirts for men"
     x_df = pd.DataFrame()
 
     for i in query.split():
@@ -67,12 +86,9 @@ def search():
             x_df = pd.concat([x_df,new_df])
 
     arr = df['id'].head(10).values
-    return {'searchResult': arr.tolist()}
+    return jsonify({'searchResult': arr.tolist()})
 
 
-@app.route('/image_search')
-def imagesearch():
-    return "HEllo"
 
 if __name__ == '__main__':
     app.run(debug=True)
