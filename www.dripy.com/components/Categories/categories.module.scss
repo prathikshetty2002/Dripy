@@ -1,0 +1,101 @@
+@import "../../styles/breakpoints.scss";
+
+.container {
+  display: flex;
+  height: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: white;
+  flex-direction: column;
+  margin-bottom: 20px;
+  @include md {
+    width: 250px;
+    margin-bottom: 0px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin: 0;
+
+    @include md {
+      margin-bottom: 12px;
+    }
+  }
+
+  .categories {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      width: 0px; /* Remove scrollbar space */
+      background: transparent; /* Optional: just make scrollbar invisible */
+    }
+
+    @include md {
+      display: list-item;
+    }
+
+    .categoryItem {
+      padding-top: 18px;
+      padding-bottom: 18px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      @include md {
+        min-width: auto;
+        flex-direction: row;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        min-width: 100px;
+        width: 100%;
+
+        @include md {
+          min-width: auto;
+          flex-direction: row;
+        }
+      }
+
+      .emoji {
+        font-weight: 400;
+        font-family: apple color emoji, segoe ui emoji, noto color emoji,
+          android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+          segoe ui symbol;
+        font-size: 18px;
+        margin-bottom: 4px;
+
+        @include md {
+          margin-right: 14px;
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+  .helpContainer {
+    display: none;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    margin-left: -10px;
+    z-index: -1;
+
+    @include md {
+      display: flex;
+    }
+
+    .helpIcon {
+      padding: 15px;
+      background-color: #f6f7f9;
+      display: flex;
+      border-radius: 100%;
+      margin-right: 10px;
+      transform: scaleX(-1);
+    }
+  }
+}

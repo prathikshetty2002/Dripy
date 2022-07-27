@@ -1,4 +1,4 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify, Response
 import pickle
 import numpy as np
 from numpy.linalg import norm
@@ -11,6 +11,8 @@ from tensorflow.keras.applications.resnet50 import ResNet50,preprocess_input
 from sklearn.neighbors import NearestNeighbors
 import pandas as pd
 from transformers import pipeline
+from flask_cors import CORS, cross_origin
+
 
 
 model = ResNet50(weights='imagenet',include_top=False,input_shape=(224,224,3))
@@ -37,12 +39,23 @@ neighbors = NearestNeighbors(n_neighbors=6,algorithm='brute',metric='euclidean')
 neighbors.fit(feature_list)
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+
+@app.route('/',methods=['GET'])
+@cross_origin()
+def helloworld():
+    return jsonify({'response': "Hello World"})
+
 @app.route('/recommend',methods=['GET'])
+@cross_origin()
 def index():
     args = request.args
     path = args['name']
     id = args['id']
-    urllib.request.urlretrieve(path, "./uploads/"+str(id)+'.jpg')
+    
+    urllib.request.urlretrieve(path, "./uploads/"+str(id)+".jpg")
     result = extract_features("./uploads/"+str(id)+'.jpg',model)
     distances,indices = neighbors.kneighbors([result])
     final_Arr = []
@@ -53,7 +66,9 @@ def index():
     return jsonify({'result': final_Arr})
 
 
+
 @app.route('/image_search')
+@cross_origin()
 def imagesearch():
     args = request.args
     url = args['url']
@@ -71,6 +86,7 @@ def imagesearch():
 
 
 @app.route('/search')
+@cross_origin()
 def search():
     args = request.args
     query = args['query']

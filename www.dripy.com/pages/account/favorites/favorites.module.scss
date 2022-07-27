@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  .title {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .content {
+    margin-top: 40px;
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      padding-bottom: 30px;
+    }
+  }
+}
