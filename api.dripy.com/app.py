@@ -10,7 +10,7 @@ from tensorflow.keras.layers import GlobalMaxPooling2D
 from tensorflow.keras.applications.resnet50 import ResNet50,preprocess_input
 from sklearn.neighbors import NearestNeighbors
 import pandas as pd
-
+from transformers import pipeline
 
 
 model = ResNet50(weights='imagenet',include_top=False,input_shape=(224,224,3))
@@ -77,16 +77,30 @@ def search():
     df = pd.read_csv('./grandfinaleX.csv',error_bad_lines = False)
 
     lis = ['gender','masterCategory','subCategory','articleType','productDisplayName']
+    temp_df = pd.DataFrame()
+    for col in lis:
+        temp_df[col] = df[col].apply(lambda x : str(x).lower())
+
+    temp_df['id'] = df['id']
 
     x_df = pd.DataFrame()
 
     for i in query.split():
         for j in lis:
-            new_df = df[df[j] == i]
+            new_df = pd.DataFrame()
+
+            new_df = temp_df[temp_df[j] == i]
             x_df = pd.concat([x_df,new_df])
 
-    arr = df['id'].head(10).values
+    arr = x_df['id'].head(10).values
     return jsonify({'searchResult': arr.tolist()})
+
+@app.route('/sentiment')
+def sentiment():
+    sentiment_pipeline = pipeline("sentiment-analysis")
+    data = ["I love you"]
+    print(sentiment_pipeline(data))
+    return "Hello Bro"
 
 
 
