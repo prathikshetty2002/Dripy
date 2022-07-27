@@ -1,0 +1,134 @@
+.verticalCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  direction: initial;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  cursor: pointer;
+  transition: box-shadow 300ms ease-in-out;
+  -webkit-transition: box-shadow 300ms ease-in-out;
+  -moz-transition: box-shadow 300ms ease-in-out;
+  -ms-transition: box-shadow 300ms ease-in-out;
+  -o-transition: box-shadow 300ms ease-in-out;
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: auto;
+    justify-content: center;
+    word-break: break-word;
+    flex-grow: 1;
+
+    .brandText {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      margin-top: 0px;
+      z-index: 1;
+      text-shadow: 2px 2px #00000022;
+      font-size: 14px;
+      text-align: center;
+      line-height: 21px;
+    }
+
+    span {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .priceContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .discount {
+        background-color: red;
+        border-radius: 4px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .prices {
+        display: flex;
+        flex-direction: column;
+
+        .priceText {
+          text-decoration: line-through;
+          color: grey;
+          font-weight: bold;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+    .salePriceText {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+
+    .imageContainer {
+      transform: scale(1.1);
+    }
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    padding-top: 115%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: all 0.4s ease-in-out;
+    flex-shrink: 0;
+
+    .image {
+      position: absolute;
+      top: 0px;
+      width: 130%;
+    }
+  }
+
+  .bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .favContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    border: 0;
+  }
+}
