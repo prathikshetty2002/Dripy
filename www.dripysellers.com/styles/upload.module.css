@@ -1,0 +1,43 @@
+.main{
+    width:100%;
+    height: 94vh;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.submitbtn{
+    margin-top: 20px;
+    padding: 12px;
+    color: white;
+    background-color: green;
+    border-radius: 8px;
+    width: 30%;
+    cursor: pointer;
+
+}
+
+.first{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.inp{
+    padding: 14px 10px;
+    width: 40%;
+}
