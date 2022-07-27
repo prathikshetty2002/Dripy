@@ -1,0 +1,50 @@
+@import "../../styles/breakpoints.scss";
+
+.container {
+  width: 100%;
+  .main {
+    .header {
+      display: flex;
+      margin-bottom: 40px;
+      flex-direction: column;
+
+      @include md {
+        flex-direction: row;
+      }
+      .uploadContainer {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 2rem 1.5rem;
+        font: 1rem/1.5 "PT Sans", Arial, sans-serif;
+        color: #5a5a5a;
+
+        .form {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+    .uploadForm {
+      margin-bottom: 50px;
+      input {
+        padding: 10px 5px;
+        width: 60%;
+      }
+      button {
+        padding: 10px 30px;
+        margin: 10px 20px;
+      }
+    }
+    .products {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      padding-bottom: 30px;
+    }
+}
+}
