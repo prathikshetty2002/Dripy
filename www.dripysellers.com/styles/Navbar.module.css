@@ -1,0 +1,50 @@
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding-left: 10px;
+    background-color: aqua;
+}
+
+.first{
+    width: 50%;
+}
+
+.second{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.second ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.second ul li{
+    list-style: none;
+    font-size: 18px;
+}
+
+.name{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.second ul li:hover{
+    display: block;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.outbtn{
+    padding: 8px 6px;
+    background-color: red;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+

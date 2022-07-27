@@ -1,0 +1,28 @@
+.main{
+    width: 100%;
+    height: 180vh;
+    background-image: url('../public/wall.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    position: absolute; 
+    padding: 20px; 
+}
+
+.heading{
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+}
+
+.subheading{
+    color: white;
+    font-size: 30px;
+    word-spacing: 4px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}

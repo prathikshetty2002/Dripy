@@ -1,11 +1,13 @@
-import { Html, Head, Main, NextScript, Script } from 'next/document'
+import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
   return (
     <Html>
       <Head />
+
+
       <body>
-        <Script>
+        {/* <Script>
         window.addEventListener('mouseover', initLandbot, { once: true });
 window.addEventListener('touchstart', initLandbot, { once: true });
 var myLandbot;
@@ -22,7 +24,7 @@ function initLandbot() {
     x.parentNode.insertBefore(s, x);
   }
 }
-        </Script>
+        </Script> */}
         <Main />
         <NextScript />
       </body>

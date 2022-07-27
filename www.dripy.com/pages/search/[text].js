@@ -33,23 +33,23 @@ export default function SearchPage({ data, query }) {
               <Button count={0} />
             </div>
           </div>
-          {/* <div className={styles.products}>
-            {!loading &&
+          <div className={styles.products}>
+            {!loading && data &&
               data.map((product) => {
                 return (
                   <ProductCard
                     key={product.id}
                     id={product.id}
-                    brand={product.brand}
-                    name={product.product_name}
-                    image={product.cover_photo}
-                    price={product.price}
-                    sale_price={product.sale_price}
+                    brand={product.seller}
+                    name={product.productDisplayName}
+                    image={product.link}
+                    price={product.price + 78}
+                    sale_price={product.price}
                     favorite={user?.favorites?.includes(product.id)}
                   />
                 );
               })}
-          </div> */}
+          </div>
         </main>
       </div>
     </Layout>
@@ -60,23 +60,26 @@ SearchPage.getInitialProps = async function ({ query }) {
   let data = {};
   let error = {};
   // await db
-  //   .collection("Products")
-  //   .get()
-  //   .then(function (querySnapshot) {
-  //     data = querySnapshot.docs
-  //       .filter((item) => item.data().productDisplayName.includes(query.text) || item.data().gender.includes(query.text)
-  //       || item.data().masterCategory.includes(query.text) || item.data().subCategory.includes(query.text) 
-  //       || item.data().sellers.includes(query.text))
-  //       .map(function (doc) {
-  //         return { id: doc.id, ...doc.data() };
-  //       });
-  //   })
-  //   .catch((e) => (error = e));
-  //   console.log("data", data)
+    // .collection("Products")
+    // .where("productDisplayName", "array-contains                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ", query.text)
+    // .get()
+    // .then(function (querySnapshot) {
+    //   // data = querySnapshot.docs
+    //   //   // .filter((item) => item.data().productDisplayName.includes(query.text) 
+    //   //   // || item.data().gender.includes(query.text)
+    //   //   // || item.data().masterCategory.includes(query.text) || item.data().subCategory.includes(query.text) 
+    //   //   // || item.data().sellers.includes(query.text)
+    //   //   )
+    //   //   .map(function (doc) {
+    //   //     return { id: doc.id, ...doc.data() };
+    //   //   });
+    // })
+    // .catch((e) => (error = e));
+    // console.log("data", data)
 
-  const res = await fetch(`http://localhost:5000/search?query=mens shirt`)
+  const res = await fetch(`http://localhost:5000/search?query=${query.text}`)
   const result = await res.json()
-  console.log(result.searchResult)
+  console.log("search ,", result.searchResult)
 
   return {
     data,

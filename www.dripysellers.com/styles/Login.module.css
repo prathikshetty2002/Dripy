@@ -1,0 +1,28 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    margin-left: 43em;
+    margin-top: 5em;
+}
+
+.main1{
+    width: 26em;
+    border: 1px solid lightgray;
+    border-radius: 54px;
+    height: 5em;
+    margin: 9px 0px;
+    padding-left: 3em;
+}
+
+
+
+.btn1{
+    width: 10em;
+    margin-left: 8em;
+    background-color: red;
+    padding: 8px;
+    margin-top: 16px;
+    border: 2px solid red;
+    border-radius: 20px;
+    color: white;
+}
