@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^1.0.0",
+    "@landbot/core": "^1.6.2",
     "date-fns": "^2.16.1",
     "firebase": "8.9.1",
     "next": "9.5.3",

@@ -1303,6 +1303,11 @@
   resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-1.3.8.tgz#32e733f92b25eaddf53d72a6246a233cd53ea387"
   integrity sha512-mEUqsqbx5S78+uN1tVS1vrgaFEeh4cbFzBs0tuzvWmJFGSSDaqf0Z9SoKvrDFXl8eBIQvADA6H4vsbUYnlXuxw==
 
+"@landbot/core@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@landbot/core/-/core-1.6.2.tgz#63d2c315ac8bff6aa599b815b8b8c0b3761541a2"
+  integrity sha512-rPe6GOU5BjFthpgGhAdJy3D20uAUCFpHYrxKwqTHmH9qBNt60B9ivtrEueqco/IduAqETFQejZDJWiqTvnN5mg==
+
 "@next/react-dev-overlay@9.5.3":
   version "9.5.3"
   resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.5.3.tgz#3275301f08045ecc709e3273031973a1f5e81427"
