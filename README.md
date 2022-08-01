@@ -7,3 +7,5 @@ Our features:
 4)Marketplace for sellers
 5)Analysis of sales
 6)Chatbot for user experience
+
+Technologies used : Flask, Next JS, Tensorflow, PowerBI, Firebase
