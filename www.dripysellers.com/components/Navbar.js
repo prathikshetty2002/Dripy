@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../styles/Navbar.module.css'
-import  {auth} from '../firebase'
+import  {auth} from '../Firebase'
 import Link from 'next/link'
 
 const Navbar = ({user}) => {

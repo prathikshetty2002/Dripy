@@ -18,7 +18,7 @@ export default function Home() {
     <Layout>
       <div className={styles.container}>
         <Head>
-          <title>Create Next App</title>
+          <title>Dripy</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
