@@ -149,21 +149,21 @@ Start the sellers portal
 
 
 
-## Softwares used
+## Project Snippets
 
-![Dripy Homepage]()
+![Dripy Homepage](imgs/home.png)
 
-![Product Section]()
+![Product Section](imgs/products.png)
 
-![Image Search]()
+![Image Search](imgs/image-search.png)
 
-![Recommendations]()
+![Recommendations](imgs/recommendation.png)
 
-![Chatbot]()
+![Chatbot](imgs/chat3.png)
 
-![Sellers Homepage]()
+![Sellers Homepage](imgs/sellers.png)
 
-![Dripy Sales Analysis]()
+![Dripy Sales Analysis](imgs/analysis.png)
 
 
 
