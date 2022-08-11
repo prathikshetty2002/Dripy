@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import '../styles/globals.css'
 import {onAuthStateChanged} from 'firebase/auth'
-import { auth } from '../Firebase'
+import {auth} from '../Firebase.js'
 import Navbar from '../components/Navbar'
 
 

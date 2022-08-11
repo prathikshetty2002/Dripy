@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Logoutscreen from '../components/Logoutscreen'
 import styles from '../styles/Home.module.css'
 import { collection, getDocs, query,  where } from "firebase/firestore";
-import { auth, db } from '../firebase'
+import { auth, db } from '../Firebase'
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 
