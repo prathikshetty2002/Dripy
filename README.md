@@ -204,6 +204,11 @@ See `contributing.md` for ways to get started.
 
 Please adhere to this project's `code of conduct`.
 
+## Guide
+
+A guideline of project composition and creation.
+
+soon adding guide.md
 
 ## Feedback
 
