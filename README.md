@@ -208,7 +208,9 @@ Please adhere to this project's `code of conduct`.
 
 A guideline of project composition and creation.
 
-soon adding guide.md
+soon adding `guide.md`
+
+Please adhere to this project's `code of conduct`.
 
 ## Feedback
 
