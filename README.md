@@ -1,7 +1,7 @@
 
 # Dripy - A fashion corner for genz's
 
-Welcome to Dripy🙌 ! an e-commerce recommendation system built with machine learning. It has a lot of key features, one of the highlight is Reverse image 🔍. Dripy also focuses on the sellers by providing them a marketplace to avail features such as logs and analysis. In future scope 💡, we also intend to add features like sentiment analysis, user segmentation and user retention predictions. Take a look at our marvellous project 👌. Fun fact - our project was among the Top 10 in the Tsec codetantra national level hackathon. If you liked our project, consider giving it a star <3 🤩
+Welcome to Dripy🙌 ! an e-commerce recommendation system built with machine learning. It has a lot of key features, one of the highlight is Reverse image 🔍. Dripy also focuses on the sellers by providing them a marketplace to avail features such as logs and analysis. In future scope 💡, we also intend to add features like sentiment analysis, user segmentation and user retention predictions. Take a look at our marvellous project 👌. Fun fact - our project was among the Top 10 in the Tsec codetantra national level hackathon. If you liked our project, consider giving it a star <3 🤩. Contributions/suggestions are welcomed !
 
 
 ## Tech Stack
