@@ -169,6 +169,8 @@ Start the sellers portal
 
 ![Recommendations](imgs/recommendation.png)
 
+![Chatbot](imgs/chat2.png)
+
 ![Chatbot](imgs/chat3.png)
 
 ![Sellers Homepage](imgs/sellers.png)
