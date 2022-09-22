@@ -8,7 +8,9 @@
 
 **Frontend** - Next.js, SaaS
 
-**Backend** - Flask, Firebase
+**Backend** - Firebase
+
+**Framework** - Flask
 
 **Database** - Firestore
 
