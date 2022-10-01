@@ -62,6 +62,7 @@ Please adhere to this project's `code of conduct`.
 > Refrain from sending us spammy pull requests we will outright reject them and you will be blacklisted and disqualified from further contributing to the hacktoberfest.
 
 
+
 ## Code of Conduct
 
 - Don't do any kind of inappropriate actions
@@ -72,3 +73,6 @@ Please adhere to this project's `code of conduct`.
 - Don't send PRs if not assigned , it creates ambiguity
 - Write meaningful commits don't use random ones
 - Quality over Quantity !
+
+
+# Happy Hacking 🚀
