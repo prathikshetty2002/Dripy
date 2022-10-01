@@ -1,5 +1,5 @@
 
-## Contributing to the hacktoberfest
+# Contributing to the hacktoberfest
 
 Contributions are always welcome!
 
