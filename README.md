@@ -206,7 +206,7 @@ Contributions are always welcome!
 
 See `CONTRIBUTING.md` for ways to get started.
 
-Please adhere to this project's `code of conduct`.
+Please adhere to this project's `CODE_OF_CONDUCT.md`.
 
 ## Guide
 
@@ -214,7 +214,7 @@ A guideline of project composition and creation.
 
 soon adding `guide.md`
 
-Please adhere to this project's `code of conduct`.
+Please adhere to this project's `CODE_OF_CONDUCT.md`.
 
 ## Feedback
 
