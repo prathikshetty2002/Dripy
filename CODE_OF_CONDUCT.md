@@ -52,6 +52,6 @@ threatening, offensive, or harmful.
 - Quality over Quantity !
 
 > **Note**
-> Follow below guidelines
+> Follow above guidelines
 
 # Happy Hacking 🚀
